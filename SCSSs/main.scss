@@ -1,11 +1,15 @@
-// Backend
-
-@import './variables.scss';
-@import './breakpoints.scss';
-@import './utils.scss';
-@import './common.scss';
-@import './mixins.scss';
+// General
+@import './variables';
+@import './breackpoints';
+@import './utils';
+@import './common';
+@import './mixins';
 
 // Section
-
-@import './header.scss';
+@import './header';
+@import './hero';
+@import './advantages';
+@import './what-we-do';
+@import './team';
+@import './footer';
+@import './adaptive';
