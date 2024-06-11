@@ -63,14 +63,18 @@ header {
 }
 
 #logo1 {
-    font-family: 'Roboto';
-    line-height: 36px;
+    font-family: 'Raleway';
     font-size: 26px;
     text-align: left;
     color: var(--dark-color);
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.78px;
 }
 
 #logo1 > span {
+    font-size: 26px;
+    letter-spacing: 0.78px;
     font-family: 'Raleway' , sans-serif;
     font-weight: 700;
     line-height: 31px;
@@ -79,20 +83,22 @@ header {
 
 nav {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    padding-left: 100px;
     width: inherit;
-    height: 60px;
+    height: 80px;
 }
 
 nav ul {
     display: flex;
     margin-left: 120px;
+    margin-bottom: 0px;
+    margin-top: 0px;
     padding: 0px;
 }
 
 nav li {
+    display: flex;
     margin-left: 50px;
     font-weight: 500;
     font-size: 14px;
@@ -103,35 +109,64 @@ nav li {
     margin-left: 390px;
 }
 
-nav a {
+.navigation {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
     color: var(--dark-color);
+    align-items: center;
 }
 
-.slink {
+.navigation:hover,
+.navigation:focus {
+    color: var(--accent-color);
+    fill: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    border-radius: 2px;
+    /* put border to the bottom of the header */
+}
+
+.shadow-link {
+    display: flex;
     color: var(--shadow-color);
+    fill: var(--shadow-color);
 }
 
 nav a:hover,
 nav a:focus {
     color: var(--accent-color);
+    fill: var(--accent-color);
 }
-
-/* nav svg:hover,
-nav svg:focus {
-    color: var(--accent-color);
-} */
 
 /*Hero*/
 
 .hero {
+    overflow: hidden;
+    background-color: rgb(198, 198, 198);
     background-image: url(/image/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
     width: inherit;
-    height: 200px;
+    height: 600px;
     padding-top: 200px;
     padding-bottom: 200px;
 }
 
+.overlay {
+    position: absolute;
+    bottom: 282px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    width: 1600px;
+    height: 600px;
+    background-color: rgba(47, 48, 58, 0.4);
+}
+
 .hero-container {
+    position: relative;
+    z-index: 1;
     text-align: center;
     width: 696px;
     height: 120px;
@@ -150,32 +185,37 @@ h1 {
 }
 
 .hero-button {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    width: 216px;
+    height: 50px;
+    padding: 0px;
+
+    color: var(--primary-background-color);
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    border: none;
     font-weight: 700;
     font-size: 16px;
     line-height: 30px;
     letter-spacing: 0.1em;
-    width: 216px;
-    height: 50px;
-    border-radius: 4px;
-    border: none;
-    position: relative;
-    left: 700px;
-    text-align: center;
-    padding: 0px;
-    color: var(--primary-background-color);
-    background-color: var(--accent-color);
 }
 
-/*Advantages*/
+/*Advantage*/
+
+.advantage {
+    width: auto;
+    height: 100%;
+}
 
 .a-list {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-top: 300px;
+    padding-top: 264px;
     padding-left: 0px;
     margin: 0px;
-    padding-bottom: 120px;
 }
 
 .atem {
@@ -195,60 +235,57 @@ h1 {
     background-repeat: no-repeat;
     background-position: center;
     content:'';
-    background-image: url('/image/vector/antenna.svg')
 }
 
-.icon-antenna {
-    width: 32px;
-    height: 32px;
+.atem#b1::before {
+    background-image: url('/image/vector/antenna.svg');
 }
-
-/*.atem::before {
-    ;
-}
-
 
 .atem#b2::before {
-    background-image: url('./image/vector/clock.svg');
+    background-image: url('/image/vector/clock.svg');
 }
-
 
 .atem#b3::before {
-    background-image: url('./image/vector/diagram.svg');
+    background-image: url('/image/vector/diagram.svg');
 }
 
-
 .atem#b4::before {
-    background-image: url('./image/vector/astronaut.svg');
-} */
+    background-image: url('/image/vector/astronaut.svg');
+}
     
-.adv h3 {
+.advantage h3 {
+    margin-top: 94px;
+    margin-bottom: 50px;
     font-weight: 700;
     font-size: 14px;
     line-height: 16px;
+
     text-transform: uppercase;
     text-align: center;
     display: inline;
 }
 
-.exp {
+.explanation {
     font-size: 14px;
     line-height: 24px;
     color: var(--shadow-color)
 }
 
-.wlist {
+.we-do-list {
     display: flex;
     flex-direction: row;
-    padding: 0px;
     justify-content: center;
+
+    padding-left: 0%;
+    padding-bottom: 94px;
+    margin: 0px;
 }
 
-.witem {
+.we-do-item {
     margin-left: 30px;
 }
 
-.adv img {
+.advantage img {
     width: 370px;
     height: 294px;
     top: 1058px;
@@ -259,41 +296,63 @@ h1 {
 .team {
     background-color: var(--spare-background-color);
     width: inherit;
-    height: 648px;
+    /* height: 648px; */
 }
 
 .team h2 {
-    padding-top: 80px;
-    margin: 0px;
+    padding-top: 94px;
+    margin-bottom: 50px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0%;
 }
 
 .team div {
-    padding-left: 150px;
-    margin-top: 70px;
+    padding-left: 215px;
+    padding-bottom: 94px;
+    margin-left: -30px;
 }
 
-.team ul {
+.team-box {
     display: flex;
     flex-direction: row;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0%;
 }
 
-.team li {
+.global-team-item {
     background-color: var(--primary-background-color);
-    margin-left: 25px;
-    border-bottom-color: rgba(0, 0, 0, 0.2);
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+    margin-left: 30px;
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
 .team img {
     width: 270px;
     height: 260px;
-    top: 1632px;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
 }
 
-.mem-svg {
-    margin-bottom: 26px;
+.team-icon-list {
+    display: flex;
+    justify-content: space-around;
+
+    padding: 0 30px;
+    margin-bottom: 30px;
+}
+
+.team svg {
+    width: 20px;
+    height: 20px;
+}
+
+.team svg:hover,
+.team svg:focus {
+    fill: var(--primary-background-color);
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    padding: 10px solid var(--accent-color);
 }
 
 .name {
@@ -308,7 +367,7 @@ h1 {
 
 .prof {
     margin-top: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     font-size: 16px;
     line-height: 19px;
     text-align: center;
@@ -366,14 +425,16 @@ address {
 
 /* Symbols */
 
-.icon-mail-g {
-    width: 16px;
+.icon-mail-gray {
+    margin-right: 5px;
+    width: 18px;
     height: 12px;
 }
 
-.icon-phone-g {
-    width: 10px;
-    height: 16px;
+.icon-phone-gray {
+    width: 11px;
+    height: 17px;
+    margin-right: 5px;
 }
 
 .icon-instagram,
@@ -385,9 +446,9 @@ address {
     fill: #AFB1B8;
 }
 
-.icon-phone-b,
-.icon-mail-b,
-.icon-person-b {
+.icon-phone-black,
+.icon-mail-black,
+.icon-person-black {
     width: 32px;
     height: 32px;
 }
